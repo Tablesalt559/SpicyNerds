@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spicy Nerds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .correct {
+      background-color: #c8f7c5;
+    }
+
+    .wrong {
+      background-color: #ff6347;
+    }
+
+    .option {
+      display: block;
+      padding: 8px;
+      margin: 5px 50px;
+      border: 5px solid #ccc;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 130px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    }
+	body {
+	background-image: url("pictures/background.jpg");
+	}
+
+		.header {
+		font-family:'Pacifico', cursive;
+		color: darkred;
+		text-align: center;
+		font-size: 200%;
+		background-color: pink;
+		}
+
+  </style>
+</head>
+
+<body>
+
+<h1 class="header">Persönlichkeitstest</h1>
+<p style="text-align:center">Mehrere Antworten können korrekt sein.</p>
+<h2 style="text-align:center;">Beschreibe dein Aussehen</h2>
+
+<label class="option">
+  <input type="checkbox" data-correct="false">
+  Durchschnittlich
+</label>
+
+<label class="option">
+  <input type="checkbox" data-correct="false">
+  Gut Aussehend
+</label>
+
+<label class="option">
+  <input type="checkbox" data-correct="true">
+  Wunderschön
+</label>
+
+
+<h2 style="text-align:center;">Beschreibe deine Persönlichkeit</h2>
+
+<label class="option">
+	<input type="checkbox" data-correct="true">
+	Mausig
+</label>
+
+<label class="option">
+	<input type="checkbox" data-correct="true">
+	Atzig
+</label>
+
+<label class="option">
+	<input type="checkbox" data-correct="true">
+	Fotzig
+</label>
+
+
+<h2 style="text-align:center;">Beschreibe deinen Humor</h2>
+
+<label class="option">
+	<input type="checkbox" data-correct="false">
+	Trocken
+</label>
+
+<label class="option">
+	<input type="checkbox" data-correct="true">
+	MEGA witzig
+</label>
+
+<label class="option">
+	<input type="checkbox" data-correct="false">
+	Absurdistisch
+</label>
+
+<h2 style="text-align:center;">Wie planst du am liebsten?</h2>
+
+<label class="option">
+	<input type="checkbox" data-correct="true">
+	Eher spontan
+</label>
+
+<label class="option">
+	<input type="checkbox" data-correct="true">
+	Spontan
+</label>
+
+<label class="option">
+	<input type="checkbox" data-correct="true">
+	Sehr spontan
+</label>
+
+<script>
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+  checkboxes.forEach(box => {
+    box.addEventListener("change", function() {
+      const parent = this.parentElement;
+
+      if (this.dataset.correct === "true") {
+        parent.classList.add("correct");
+        parent.classList.remove("wrong");
+      } else {
+        parent.classList.add("wrong");
+        parent.classList.remove("correct");
+      }
+    });
+  });
+</script>
+
+<a href="results.html" class="btn">Absenden</a>
+
+</body>
+</html>
